@@ -1,0 +1,82 @@
+.overlay-text::before {
+    display: inline;
+    font-size: 50%;
+    line-height: 0;
+    white-space: nowrap;
+    position: relative;
+    top: 0px;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: top;
+    width: 0px;
+    content: attr(data-translation);
+    font-weight: bolder;
+    color: #E67E22;
+    pointer-events: none;
+    user-select: none;
+}
+
+.non-breaking {
+    white-space: nowrap;
+}
+
+.noBreak {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+
+
+/* Test styling: */
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates 2 equal-width columns */
+  grid-gap: 10px; /* Space between grid items */
+}
+
+.question {
+  box-sizing: border-box;  /* Add this line */
+  border: 1px solid gray;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.question.correct {
+  border: 2px solid lightgreen;
+  padding: 9px;  /* Reduce padding by 1px */
+  background-color: rgba(144, 238, 144, 0.2);
+}
+
+.question.incorrect {
+  border: 2px solid lightcoral;
+  padding: 9px;  /* Reduce padding by 1px */
+  background-color: rgba(255, 99, 71, 0.2);
+}
+
+.audioControl {
+  width: 1em;
+  height: 1em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0.2em;
+  box-shadow: none;
+  margin-right: 0.3em;
+  background-color: white;
+}
+
+.audioControl.paused {
+  background-image: url('../play-solid.svg');
+  /* content: '▶';*/
+  /* Additional styling */
+}
+
+.audioControl.playing {
+  background-image: url('../pause-solid.svg');
+  /* content: '⏸';*/
+  /* Additional styling */
+}
