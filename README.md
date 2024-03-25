@@ -45,5 +45,26 @@ To use the Book-Writer, follow these steps:
 ## Customization
 The script allows for various customizations, including voice type and pitch adjustments for audio narrations. Review the script's parameters for detailed customization options.
 
-## Contributing
-Contributions to the Book-Writer project are welcome. Please ensure you follow the project's code of conduct and contribution guidelines.
+## Managing Known Words and Translation Samples
+
+### Known Words (`known_words.json`)
+The `known_words.json` file functions as a dictionary, identifying words that will not require translation in the generated books. This approach ensures a streamlined reading experience by excluding terms that are either common knowledge or do not have a direct translation impact.
+
+- **Format:** This is a JSON dictionary file, where each entry specifies a word recognized as not needing translation.
+- **Updating:** Users are encouraged to periodically review and update the `known_words.json` file. This review helps in refining the list with new terms that should be exempt from translation efforts.
+
+### Translation Samples (`samples.csv`)
+Translations are primarily managed through the `samples.csv` file, where the first two columns are critical for operation. The first column lists the words to be translated, and the second column provides their corresponding translations.
+
+- **Purpose:** This file is instrumental in enhancing the translation quality of the generated books by providing a direct reference for translating words not listed in the `known_words.json` file.
+- **Format:** The `samples.csv` file is structured with at least two important columns: the word requiring translation (Column 1) and its translation (Column 2).
+- **Updating:** Regular updates to the `samples.csv` file are essential for incorporating new words and their translations, thereby improving the overall translation quality in future projects.
+
+### Listing Words That Need Translation
+After a book is generated, it is possible to list words that have not been translated. This feature aids in identifying gaps in the Known Words and Samples files:
+
+- **Process:** The software will generate a list of untranslated words post-creation of a book.
+- **Action:** Users should review this list, determining whether to add these words to the Known Words file (if translation is unnecessary) or to the Samples file with an appropriate translation for future use.
+
+### Contribution
+Contributions to the Known Words and Samples files are highly appreciated as they directly contribute to the improvement of the project. Users are encouraged to share updates or enhancements to these files, fostering a collaborative and ever-improving tool.
